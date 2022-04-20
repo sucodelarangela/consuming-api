@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consuming API</title>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      // dealing with promises
+      // you can use fetch('url').then... (old way)
+      // or you can use async/await (more modern way)
+      async function getContent() {
+        // try gets the data from the promise
+        try {
+          // is successful, saves the response inside a variable
+          const response = await fetch('http://localhost:4567/')
+          // the turns the response into json
+          const data = await response.json()
+          // and shows the data on the screen
+          show(data)
+        } catch (error) {
+          // if the response returns an error, we can catch it and show it on the console
+          console.error(error)
+        }
+      }
+
+      // execute the function to get the content of the API
+      getContent()
+
+      function show(users) {
+        let output = ''
+
+        // for every user inside the API json, we'll create a list on html
+        for (let user of users) {
+          output += `<li>${user.name}</li>`
+        }
+
+        document.querySelector('main').innerHTML = output
+      }
+    </script>
+  </body>
+</html>
