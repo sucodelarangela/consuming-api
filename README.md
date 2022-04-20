@@ -28,6 +28,6 @@ Consumir API
 Consumir API
 
 - [x] jsonplaceholder (https://jsonplaceholder.typicode.com/users)
-- [ ] Usar `axios`
-- [ ] Semelhanças entre `axios` e `fetch`
+- [x] Usar `axios`
+- [x] Semelhanças entre `axios` e `fetch`
 - [ ] Usar `try/catch`
